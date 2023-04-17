@@ -110,7 +110,7 @@ export const ModalWindow: React.FC<ConversationModal> = ({
 
     for (const conversation of conversations) {
       const addedParticipants = conversation.participants.filter(
-        (p: ConversationPopulated) => p.user.id !== userId
+        (p) => p.user.id !== userId
       );
 
       if (addedParticipants.length !== participantIds.length) {
