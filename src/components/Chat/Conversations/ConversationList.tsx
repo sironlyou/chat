@@ -54,8 +54,8 @@ export const ConversationList: React.FC<ConversationListProps> = ({
 
   const onLeaveConversation = async (conversation: ConversationPopulated) => {
     const participantIds = conversation.participants
-      .filter((p) => p.user.id !== userId)
-      .map((p) => p.user.id);
+      .filter((p: ParticipantPopulated) => p.user.id !== userId)
+      .map((p: ParticipantPopulated) => p.user.id);
 
     try {
       const { data, errors } = await updateParticipants({
@@ -102,7 +102,7 @@ export const ConversationList: React.FC<ConversationListProps> = ({
 
   const getUserParticipantObject = (conversation: ConversationPopulated) => {
     return conversation.participants.find(
-      (p) => p.user.id === session.user.id
+      (p: ParticipantPopulated) => p.user.id === session.user.id
     ) as ParticipantPopulated;
   };
 
