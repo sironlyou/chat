@@ -127,6 +127,7 @@ export const ConversationsWrapper: React.FC<ConversationsProps> = ({
         }
 
         if (updatedConversationId === conversationId) {
+          if (typeof conversationId !== "string") return;
           onViewConversation(conversationId, false);
           return;
         }
