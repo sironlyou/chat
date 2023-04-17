@@ -110,7 +110,7 @@ export const ModalWindow: React.FC<ConversationModal> = ({
 
     for (const conversation of conversations) {
       const addedParticipants = conversation.participants.filter(
-        (p) => p.user.id !== userId
+        (p: ConversationPopulated) => p.user.id !== userId
       );
 
       if (addedParticipants.length !== participantIds.length) {
@@ -216,6 +216,7 @@ export const ModalWindow: React.FC<ConversationModal> = ({
   useEffect(() => {
     if (editingConversation) {
       setParticipants(
+        //@ts-ignore
         editingConversation.participants.map((p) => p.user as SearchedUser)
       );
       return;
