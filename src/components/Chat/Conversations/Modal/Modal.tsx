@@ -141,7 +141,7 @@ export const ModalWindow: React.FC<ConversationModal> = ({
 
   const onCreateConversation = async () => {
     const participantIds = [userId, ...participants.map((p) => p.id)];
-
+    //
     try {
       const { data, errors } = await createConversation({
         variables: {
