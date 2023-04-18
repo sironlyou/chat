@@ -4,7 +4,7 @@ import { getMainDefinition } from "@apollo/client/utilities";
 import { createClient } from "graphql-ws";
 import { getSession } from "next-auth/react";
 const httpLink = new HttpLink({
-  uri: `https://chat-backend-m3np.onrender.com/graphql`,
+  uri: `http://localhost:4000/graphql`,
 
   credentials: "include",
 });
@@ -13,7 +13,7 @@ const wsLink =
   typeof window !== "undefined"
     ? new GraphQLWsLink(
         createClient({
-          url: `wss://https://chat-backend-m3np.onrender.com//graphql/subscriptions`,
+          url: `ws://http://localhost:4000/graphql/subscriptions`,
 
           connectionParams: async () => ({
             session: await getSession(),
