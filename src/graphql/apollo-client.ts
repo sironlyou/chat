@@ -13,7 +13,7 @@ const wsLink =
   typeof window !== "undefined"
     ? new GraphQLWsLink(
         createClient({
-          url: `ws://https://chat-backend-m3np.onrender.com/graphql/subscriptions`,
+          url: `wss://https://chat-backend-m3np.onrender.com//graphql/subscriptions`,
 
           connectionParams: async () => ({
             session: await getSession(),

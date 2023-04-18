@@ -29,7 +29,7 @@ const Auth: React.FC<AuthProps> = ({ session, reloadSession }) => {
       const response = await axios({
         method: "post",
 
-        url: `https://chat-backend-m3np.onrender.com/uploadFile`,
+        url: `http://https://chat-backend-m3np.onrender.com/uploadFile`,
 
         data: formData,
         headers: { "Content-Type": "multipart/form-data" },
