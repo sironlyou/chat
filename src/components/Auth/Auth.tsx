@@ -28,7 +28,9 @@ const Auth: React.FC<AuthProps> = ({ session, reloadSession }) => {
     try {
       const response = await axios({
         method: "post",
-        url: "http://localhost:4000/uploadFile",
+
+        url: ` ${process.env.API_URL}/uploadFile`,
+
         data: formData,
         headers: { "Content-Type": "multipart/form-data" },
       });
